@@ -25,3 +25,8 @@ def extract_text_from_pdf(pdf_file):
     for page in pdf_reader.pages:
         text += page.extract_text()
     return text
+
+def extract_text_from_file(uploaded_file):
+    if uploaded_file.type == "application/pdf":
+        return extract_text_from_pdf(io.BytesIO(uploaded_file.read()))
+    return uploaded_file.getvalue().decode("utf-8")
