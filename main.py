@@ -15,3 +15,7 @@ st.markdown("Upload your resume and get a critique from an AI")
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 uploaded_file = st.file_uploader("Upload your resume (PDF or TXT)", type=["pdf", "txt"])
+job_role = st.text_input("OPTIONAL: Enter the job role you're applying for (e.g. 'Software Engineer', 'Data Analyst', 'Sales Manager')")
+
+analyze = st.button("Analyze Resume")
+
